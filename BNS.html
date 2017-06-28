@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>剑灵首页-剑灵官方网站</title>
+    <link rel="stylesheet" href="css.css"/>
+    <link rel="stylesheet" href="cs样式.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script src="剑灵JS.js"></script>
+    <script src="lib/jquery-1.12.4.js"></script>
+    <script src=""></script>
+    <script>
+        //花瓣下落
+        var minSize = 5;
+        var maxSize = 20;
+        var flower = $('<div></div>').css({
+            'position': 'absolute',
+            'top': '0'
+        }).html('<img src="images/flower.png" alt=""/>');
+        $(function () {
+            var bodyY = $(document).height();
+            var bodyX = $(document).width();
+            setInterval(function () {
+                var topLeft = Math.random() * bodyX;
+                var topOpacity = 0.7 + Math.random() * 0.3;
+                var bottomTop = bodyY;
+                var bottomLeft = Math.random() * bodyX;
+                var speed = 8000 + Math.random() * 8000;
+                var sSize = minSize + maxSize * Math.random() + 10;
+                flower.clone().appendTo('body').css({
+                    'left': topLeft - 60,
+                    'opacity': topOpacity,
+                    'font-size': sSize
+                }).animate({
+                    'top': bottomTop - 60,
+                    'left': bottomLeft - 60,
+                    'opacity': 0.5
+                }, speed, function () {
+                    $(this).remove();
+                });//清除div防止过多
+            }, 1000);
+        });
+
+    </script>
+</head>
+<body>
+<!--<audio src="初音ミク%20-%20再见吧骗子.mp3" autoplay="autoplay"></audio>-->
+        <!--顶上的通栏开始-->
+    <div class="top-top">
+        <div class="top-left">
+            <i class="left1"></i>
+            <i class="left2"></i>
+        </div>
+        <div class="top-right">
+            <ul>
+                <li class="top-right-bottom2"><i>></i>返回官网首页</li>
+                <li class="top-right-bottom1">点卷充值</li>
+                <li class="top-right-bottom1">游戏下载</li>
+
+
+            </ul>
+        </div>
+    </div>
+        <!--顶上的通栏结束-->
+        <!--左边下载的开始-->
+        <div class="middle-left">
+            <div class="middle-left-left">
+                <div></div>
+            </div>
+            <div class="middle-left-right clearfix">
+                <div class="middle-left-left-top">
+                    <h1><a href="#">剑灵</a></h1>
+                </div>
+                <div>
+                    <div class="mllt-centre">
+                        <a href="#">
+                            <i class="blade"></i>
+                            <i class="download1"></i>
+                            <i class="download2"></i>
+                        </a>
+                    </div>
+                    <div class="mllt-bottom">
+                        <a href="#" id="new-packs">
+                            <i class="packs"></i>
+                            <span class="packsWd">新手礼包</span>
+                        </a>
+                        <p id="hideNewPacks"></p>
+                    </div>
+                </div>
+                <div>
+                    <div class="middle-left-bottom1">
+                        <ul id="middle-ul">
+                            <li class="coupons-li">
+                                <a href="#" id="a-coupons">
+                                    <i class="coupons"></i>
+                                    <span>点券充值</span>
+                                </a>
+                            </li>
+                            <li class="conversion-li">
+                                <a href="子页面1/剑灵小项目(1)/剑灵-活动中心.html" id="a-conversion">
+                                    <i class="conversion"></i>
+                                    <span>兑换中心</span>
+                                </a>
+                            </li>
+                            <li class="activity-li">
+                                <a href="#" id="a-activity">
+                                    <i class="activity"></i>
+                                    <span>活动中心</span>
+                                </a>
+                            </li>
+                            <li class="edition-li">
+                                <a href="#" id="a-edition">
+                                    <i class="edition"></i>
+                                    <span>版本中心</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="middle-left-bottom2">
+                        <ul id="middle_ul">
+                            <li class="property-li">
+                                <a href="#" >
+                                    <i class="property"></i>
+                                    <span>道聚城</span>
+                                </a>
+                            </li>
+                            <li class="welfare-li">
+                                <a href="#" >
+                                    <i class="welfare"></i>
+                                    <span>福利中心</span>
+                                </a>
+                            </li>
+                            <li class="mall-li">
+                                <a href="#" >
+                                    <i class="mall"></i>
+                                    <span>周边商城</span>
+                                </a>
+                            </li>
+                            <li class="repair-li">
+                                <a href="#" >
+                                    <i class="repair"></i>
+                                    <span>报错维复</span>
+                                </a>
+                            </li>
+                            <li class="userName-li">
+                                <a href="#" >
+                                    <i class="userName"></i>
+                                    <span>账号安全</span>
+                                </a>
+                            </li>
+                            <li class="forum-li">
+                                <a href="#" >
+                                    <i class="forum"></i>
+                                    <span>洪门论坛</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mlb-bottom clearfix">
+                        <ul class="mlb-bottom-ul">
+                            <li class="leaguer-li">
+                                <a href="#">
+                                    <i class="leaguer"></i>
+                                    <b class="bgMask"></b>
+                                </a>
+                            </li>
+                            <li class="club-li">
+                                <a href="#">
+                                    <i class="club"></i>
+                                    <b class="bgMask"></b>
+                                </a>
+                            </li>
+                            <li class=" steward-li">
+                                <a href="#">
+                                    <i class="steward"></i>
+                                    <b class="bgMask"></b>
+                                </a>
+                            </li>
+                            <li class="life-li">
+                                <a href="#">
+                                    <i class="life"></i>
+                                    <b class="bgMask"></b>
+                                </a>
+                            </li>
+                            <li class="greeen-diamond-li">
+                                <a href="#">
+                                    <i class="greeen-diamond"></i>
+                                    <b class="bgMask"></b>
+                                </a>
+                            </li>
+                            <li class="pink-diamond-li">
+                                <a href="#">
+                                    <i class="pink-diamond"></i>
+                                    <b class="bgMask"></b>
+                                </a>
+                            </li>
+                            <li class="blue-diamond-li">
+                                <a href="#">
+                                    <i class="blue-diamond"></i>
+                                    <b class="bgMask"></b>
+                                </a>
+                            </li>
+                            <li class="yellow-diamond-li">
+                                <a href="#">
+                                    <i class="yellow-diamond"></i>
+                                    <b class="bgMask"></b>
+                                </a>
+                            </li>
+                            <li class="help-li">
+                                <a href="#">
+                                    <i class="help"></i>
+                                    <b class="bgMask"></b>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="media clearfix">
+                            <a href="#" class="media-a">合作媒体</a>
+                            <i class="sanjiao"></i>
+                            <ul class="media-ul">
+                                <li><a href="#">腾讯游戏频道</a></li>
+                                <li><a href="#">17173.com</a></li>
+                                <li><a href="#">多玩</a></li>
+                                <li><a href="#">掌游宝</a></li>
+                                <li><a href="#">新浪游戏</a></li>
+                                <li><a href="#">178.com</a></li>
+                                <li><a href="#">766.com</a></li>
+                                <li><a href="#">131.com</a></li>
+                                <li><a href="#">52PK.com</a></li>
+                                <li><a href="#">太平洋游戏</a></li>
+                                <li><a href="#">超级玩家</a></li>
+                                <li><a href="#">电玩巴士</a></li>
+                                <li><a href="#">叶子猪</a></li>
+                                <li><a href="#">爱拍原创视频</a></li>
+                                <li><a href="#">腾讯文学</a></li>
+                                <li><a href="#">希望之地</a></li>
+                                <li><a href="#">腾旭先游</a></li>
+                            </ul>
+                        </div>
+                        <div class="configure">
+                            <h2>
+                                <a href="#">推荐配置</a>
+                            </h2>
+                            <p>
+                                <i>CPU</i>
+                                四核及以上
+                            </p>
+                            <p>
+                                <i>系统</i>
+                                WIN7 (64位)
+                            </p>
+                            <p>
+                                <i>内存</i>
+                                4 GB以上
+                            </p>
+                            <p>
+                                <i>显卡</i>
+                                NVIDIA GeForce
+                            </p>
+                            <p class="gtx">
+                                GTX 750
+                            </p>
+                            <p class="gtx">
+                                GTX 750 Ti
+                            </p>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--左边下载的结束-->
+        <!--右边开始-->
+        <!--记林 开始 -->
+        <!--jilin 开始 -->
+        <div class="middle-right">
+            <!--首页等li标签-->
+            <div class="links">
+                <!--官方微博  链接入口-->
+                <span class="gf_weibo"><a href="http://weibo.com/bnslove?sudaref=bns.qq.com&retcode=6102&is_hot=1"></a></span>
+                <ul class="links_a">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">游戏资料</a></li>
+                    <li><a href="#">下载中心</a></li>
+                    <li><a href="#">自助服务</a></li>
+                    <li><a href="#">玩家互动</a></li>
+                    <li class="last"><a href="#">腾讯客服</a></li>
+                </ul>
+                <!--英文link li标签-->
+                <ul class="links_e">
+                    <li>index</li>
+                    <li>game data</li>
+                    <li>download</li>
+                    <li>self service</li>
+                    <li>interaction</li>
+                    <li>custom service</li>
+                </ul>
+                <!--a 链接 内容 -->
+                <ul class="links_z" >
+                    <li>
+                        <a href="#" >周边商城</a>
+                    </li>
+                    <li>
+                        <a href="#" >游戏特色</a>
+                        <a href="#" >职业介绍</a>
+                        <a href="#" >新手指南</a>
+                        <a href="#" >帮帮攻略</a>
+                        <a href="#" >副本攻略</a>
+                    </li>
+                    <li>
+                        <a href="#">下载客户端</a>
+                        <a href="#">南天国体验服 </a>
+                    </li>
+                    <li>
+                        <a href="#" >安全模式</a>
+                        <a href="#" >自助工具</a>
+                        <a href="#" >封停查询</a>
+                        <a href="#" >被盗找回</a>
+                    </li>
+                    <li>
+                        <a href="#" >洪门论坛</a>
+                        <a href="#" >灵芝圈社区</a>
+                        <a href="#" >剑灵微博</a>
+                        <a href="#" >比武场排行</a>
+                    </li>
+                    <li class="last"><a href="#" >在线客服</a>
+                        <a href="#" >客服专区</a>
+                        <a href="#" >用户协议</a>
+                        <a href="#" >玩家条例</a>
+                    </li>
+                </ul>
+            </div>
+            <!--巧克力 版本链接rukou-->
+            <div class="xtdw_1 xtdw "><a href="子页面1/剑灵项目/index.html"  ></a></div>
+            <div class="xtdw_2  xtdw"><a href="http://bns.qq.com/cp/a20170213bnsqrj/index.html" ></a></div>
+
+
+
+            <!--记林 结束-->
+         <div class="middle-right-middle">
+             <div class="carousel" id="carousel">
+                 <div class="carousel_head" id="carousel_head">
+                     <a href="javascript:void(0)">官方</a>
+                     <a href="javascript:void(0)">合作</a>
+                 </div>
+                 <div class="act_slider_l" id="act_slider_l">
+                     <div class="slider_pic" id="slider_pic_l">
+                         <a href="javascript:void(0)">
+                             <img src="images/1489044574.jpg" alt=""/>
+                         </a>
+                         <a href="javascript:void(0)">
+                             <img src="images/232331.jpg" alt=""/>
+                         </a>
+                         <a href="javascript:void(0)">
+                             <img src="images/230627.jpg" alt=""/>
+                         </a>
+                         <a href="javascript:void(0)">
+                             <img src="images/1489397497.jpg" alt=""/>
+                         </a>
+                         <a href="javascript:void(0)">
+                             <img src="images/d03a922b14829dfc8194334199cdb129.jpg" alt=""/>
+                         </a>
+                         <a href="javascript:void(0)">
+                             <img src="images/1489031015.jpg" alt=""/>
+                         </a>
+                     </div>
+                     <div class="slider-switcher" id="slider_switcher_l">
+                     </div>
+                 </div>
+                 <div class="act_slider_r" id="act_slider_r">
+                     <div class="slider_pic" id="slider_pic_r">
+                         <a href="javascript:void(0)">
+                             <img src="images/1488448289.jpg" alt=""/>
+                         </a>
+                         <a href="javascript:void(0)">
+                             <img src="images/232554.jpg" alt=""/>
+                         </a>
+                         <a href="javascript:void(0)">
+                             <img src="images/1489115633.jpg" alt=""/>
+                         </a>
+                         <a href="javascript:void(0)">
+                             <img src="images/1489127498.jpg" alt=""/>
+                         </a>
+                         <a href="javascript:void(0)">
+                             <img src="images/1489397742.jpg" alt=""/>
+                         </a>
+                         <a href="javascript:void(0)">
+                             <img src="images/1489143755.jpg" alt=""/>
+                         </a>
+                     </div>
+                     <div class="slider-switcher" id="slider_switcher_r"></div>
+                 </div>
+
+             </div>
+
+
+
+
+             <!--赵静开始-->
+
+             <div class="mrm-right">
+                 <div class="mrm-right1">
+                     <div class="mrm-right1-l" id="mrmright1l">
+                         <div class="tab1" id="tab1">
+                             <span>全部</span>
+                             <span>新闻</span>
+                             <span>公告</span>
+                             <span>活动</span>
+                             <span>媒体</span>
+                             <span>论坛</span>
+                             <a href="#" class="more"><i></i></a>
+                         </div>
+                         <div class="tab2" id="tab2">
+                             <ul class="current"><li><a href="#" style="color:red"><span>03/14</span>【新闻】纯白色的恋歌：剑灵三月浪漫开</a></li>
+                                 <li><a href="#">【媒体】剑灵版本今日更新 海量Q币活动等你参加<span>03/14</span></a></li>
+                                 <li><a href="#">【公告】电信部分大区网络波动公告<span>03/14</span></a></li>
+                                 <li><a href="#">【公告】新角色创建异常问题公告4<span>03/14</span></a></li>
+                                 <li> <a href="#">【媒体】中信银行：申请剑灵专属卡 领礼包和电影票<span>03/14</span></a></li>
+                                 <li><a href="#">【公告】纯白色的恋歌：3月14日7:00全区全服停机维护公告<span>03/14</span></a></li>
+                                 <li> <a href="#">【新闻】纯白色的蜜恋 白色情人节惊喜回礼<span>03/14</span></a></li>
+                                 <li><a href="#">【新闻】纯白色的恋歌：剑灵三月浪漫开篇<span>03/13</span></a></li></ul>
+
+
+                             <ul>
+                                 <li><a href="#">【新闻】纯白色的蜜恋 白色情人节惊喜回礼<span>03/13</span></a></li>
+                                 <li><a href="#">【新闻】糖果戒指与好礼！3月情人节特别活动开启<span>03/08</span></a></li>
+                                 <li> <a href="#">【新闻】手把手教你撩妹！剑灵女王节浪漫攻略<span>03/06</span></a></li>
+                                 <li> <a href="#">【新闻】西洛版本PVE暗系刺客浅谈（梵天篇）<span>03/01</span></a></li>
+                                 <li><a href="#">【新闻】回归灵芝专属礼：春光无尽缓缓归<span>02/23</span></a></li>
+                                 <li><a href="#">【新闻】奖池自由配，顶级福利任挑：洪门秘宝再开启<span>02/20</span></a></li>
+                                 <li><a href="#">【新闻】【福利】热舞：火炮兰小姐姐和小姐姐的极致诱惑<span>02/20</span></a></li>
+                             </ul>
+
+
+                             <ul>
+                                 <li><a href="#">【公告】电信部分大区网络波动公告<span>03/13</span></a></li>
+                                 <li> <a href="#">【公告】新角色创建异常问题公告<span>03/13</span></a></li>
+                                 <li><a href="#">【公告】纯白色的恋歌：3月14日7:00全区全服停机维护公告<span>03/08</span></a></li>
+                                 <li><a href="#">【公告】3月9日8:00全区全服停机维护公告<span>03/06</span></a></li>
+                                 <li><a href="#">【公告】(已修复)电信9区网络波动公告<span>03/01</span></a></li>
+                                 <li><a href="#">【公告】电信时光、傲雪大区网络波动公告<span>02/23</span></a></li>
+                                 <li><a href="#">【公告】2月21日7:00全区全服停机维护公告<span>02/20</span></a></li>
+                                 <li><a href="#">【公告】电信大区网络波动公告<span>02/20</span></a></li>
+                             </ul>
+
+
+
+                             <ul>
+                                 <li><a href="#">【活动】三周年感恩视频活动获奖名单公布<span>03/13</span></a></li>
+                                 <li><a href="#">【活动】《我们的三年》三周年征集活动获奖名单公布<span>03/08</span></a></li>
+                                 <li><a href="#">【活动】双十一飞龙特供，周年庆时装特卖<span>03/06</span></a></li>
+                                 <li><a href="#">【活动】道聚城：双十一特别限时折扣 更优惠，更划算！<span>03/01</span></a></li>
+                                 <li><a href="#">【活动】大声说出爱！我们的三年庆生征集活动今日开启<span>02/23</span></a></li>
+                                 <li><a href="#">【活动】女王的恩赐送时装：相约29日21:30<span>02/20</span></a></li>
+                                 <li><a href="#">【活动】iPhone、Q币还有烛魔武器！国庆好礼别错过<span>02/20</span></a></li>
+                                 <li><a href="#">【活动】丁酉新春大特惠，神龙商店来报道<span>03/13</span></a></li></ul>
+
+
+                             <ul>
+                                 <li><a href="#">【媒体】剑灵版本今日更新 海量Q币活动等你参加<span>03/13</span></a></li>
+                                 <li><a href="#">【媒体】中信银行：申请剑灵专属卡 领礼包和电影票<span>03/13</span></a></li>
+                                 <li><a href="#">【媒体】西洛版本PVE雷系刺客白皮书<span>03/08</span></a></li>
+                                 <li> <a href="#">【媒体】特玩网：白色情人节 寻找你爱的游戏CP<span>03/06</span></a></li>
+                                 <li> <a href="#">【媒体】电玩巴士：在一起才是爱 为喜欢的CP投票赢Q币<span>03/01</span></a></li>
+                                 <li><a href="#">【媒体】虎牙直播：白色情人节 来自女神的馈赠<span>02/23</span></a></li>
+                                 <li><a href="#">【媒体】斗鱼直播：送好礼 剑灵三月礼包领不停<span>02/20</span></a></li>
+                                 <li><a href="#">【媒体】全民TV：今晚看离歌主播直播 拿直播礼包<span>02/20</span></a></li></ul>
+
+
+                             <ul>
+                                 <li><a href="#">【论坛】【夕木酱】西洛抢先体验！南天国实验室资格速度抢<span>03/13</span></a></li>
+                                 <li><a href="#">【论坛】【夕木酱】假期余额不足，这些福利你领取了么？<span>03/13</span></a></li>
+                                 <li> <a href="#">【论坛】新副本开荒：螺旋寺院攻略教学<span>03/08</span></a></li>
+                                 <li><a href="#">【论坛】剑灵帮帮官方攻略团队招募<span>03/06</span></a></li>
+                                 <li> <a href="#">【论坛】【夕木酱】30000点券悬赏！开发团队问题大征集<span>03/01</span></a></li>
+                                 <li><a href="#">【论坛】【夕木酱爆料】最新消息：剑灵第五种族即将到来！<span>02/23</span></a></li>
+                                 <li><a href="#">【论坛】【教学】浮夸烛魔8段通关无尽塔90层<span>02/20</span></a></li>
+                                 <li><a href="#">【论坛】白色情人节，来官方频道抢永久他的衬衫！<span>02/20</span></a></li></ul>
+
+                         </div>
+                     </div>
+                 </div>
+                 <div class="mrm-right2">
+                     <div class="mrm-right2-top" id="tab3">
+                         <span>伙伴</span><i>|</i>
+                         <span>时装</span><i>|</i>
+                         <span>活动</span><i>|</i>
+                         <span>副本</span>
+                     </div>
+                     <ul class="tab3" id="tab4">
+                         <li class="current"><a href="#" title="伙伴"><img src="images/tab2-1.jpg" alt=""/></a></li>
+                         <li><a href="#" title="时装"><img src="images/tab2-2.jpg" alt=""/></a></li>
+                         <li><a href="#"><img src="images/tab2-3.jpg" alt="" title="活动"/></a></li>
+                         <li><a href="#"><img src="images/tab2-4.jpg" alt="" title="副本"/></a></li>
+                     </ul>
+                 </div>
+                 <div class="mrm-right3" id="mrmright3">
+                     <ul id="lunbo1">
+                         <li class="current"><a href="#"><img src="images/left1.jpg" alt="" title="公众号"/></a></li>
+                         <li><a href="#"><img src="images/left2.jpg" alt="" tltle="周边商城"/></a></li>
+                         <li><a href="#"><img src="images/left3.jpg" alt="" title="回流活动"/></a></li>
+                     </ul>
+                     <div class="square" id="square1">
+                         <span></span>
+                         <span></span>
+                         <span></span>
+                     </div>
+                 </div>
+                 <div class="mrm-right4"><a href="#"><img src="images/enter.jpg" alt="" /></a></div>
+                 <div class="mrm-right5">
+                     <ul id="lunbo2">
+                         <li class="current"><a href="#"><img src="images/rt1.jpg" alt="" title="50级"/></a></li>
+                         <li><a href="#"><img src="images/rt2.jpg" alt="" title="周边商城"/></a></li>
+                         <li><a href="#"><img src="images/rt3.jpg" alt="" title="管家"/></a></li>
+                     </ul>
+                     <div class="square" id="square2">
+                         <span></span>
+                         <span></span>
+                         <span></span>
+                     </div>
+                 </div>
+                 <div class="mrm-right6" >
+                     <ul id="lunbo3">
+                         <li class="current"><a href="#"><img src="images/rb1.jpg" alt="" title="浏览器"/></a></li>
+                         <li><a href="#"><img src="images/rb2.jpg" alt="" title="版本专题"/></a></li>
+                         <li><a href="#"><img src="images/rb3.jpg" alt="" title="会员"/></a></li>
+                     </ul>
+                     <div class="square" id="square3">
+                         <span></span>
+                         <span></span>
+                         <span></span>
+                     </div>
+                 </div>
+             </div>
+
+             <!--赵静结束-->
+         </div>
+
+     </div>
+        <!--右边结束-->
+        <!--中下开始-->
+        <!-- 张平忠 中下开始 -->
+        <div class="middle-bottom">
+            <div class="middle-bottom1">
+                <div class="middle-bottom1-top fl">
+                    <i></i>
+                    <span class="news-center"> 资讯攻略</span>
+                    <span class="text-right">GUIDE AND NEWS</span>
+                </div>
+                <div class="middle-bottom1-bottom fr">
+                    <input type="text" value="剑灵强化模拟器" class="inputs-one fl"/>
+                    <input type="submit" value="" class="inputs-two fr"/>
+                </div>
+
+            </div>
+            <div class="middle-bottom2">
+                <div class="middle-bottom2-left">
+                    <div class="middle-bottom2-left1">
+                        <ul>
+                            <li><a href="#">【帮帮攻略】西洛版本PVE暗系列(焚天篇)</a> <span>03/06</span></li>
+                            <li><a href="#">【新手必读】新老玩家都不翻车:剑灵骗术集合与防骗指南</a> <span>03/03</span></li>
+                            <li><a href="#">【周边文化】剑灵MMD视频欣赏 火炮兰的抖腿向电音炫舞</a>  <span>02/28</span></li>
+                            <li><a href="#">【新手必读】洪门秘宝再度来袭 浅谈开箱技巧与物价走势分析</a> <span>02/27</span></li>
+                            <li><a href="#">【技能详解】从古代神到黑风 数据告诉你首饰如何选择最合适</a> <span>02/22</span></li>
+                            <li><a href="#">【帮帮攻略】【装备数据】追寻秒伤:八卦的抉择(召唤)</a> <span>02/21</span></li>
+
+                        </ul>
+                    </div>
+                    <div class="middle-bottom2-left2 fl">
+                        <a href="#"><img src="images/02back.jpg" alt=""/></a>
+                    </div>
+                    <div class="middle-bottom2-left3 fr">
+                        <a href="#">  <img src="images/01back.jpg" alt=""/></a>
+                    </div>
+                </div>
+                <div class="middle-bottom2-right">
+                    <div class="middle-bottom2-right1">
+                        <a href="#"><img src="images/gpic_8.png" alt=""/></a>
+                    </div>
+
+                    <div class="middle-bottom2-right1">
+                        <a href="#"><img src="images/gpic_7.png" alt=""/></a>
+                    </div>
+                    <div class="middle-bottom2-right1">
+                        <a href="#"><img src="images/gpic_6.png" alt=""/></a>
+                    </div>
+
+                    <div class="middle-bottom2-right1">
+                        <a href="#"><img src="images/gpic_5.png" alt=""/></a>
+                    </div>
+
+                    <div class="middle-bottom2-right1">
+                        <a href="#"><img src="images/gpic_4.png" alt=""/></a>
+                    </div>
+
+                    <div class="middle-bottom2-right1">
+                        <a href="#"><img src="images/gpic_3.png" alt=""/></a>
+                    </div>
+
+                    <div class="middle-bottom2-right1">
+                        <a href="#"><img src="images/gpic_2.png" alt=""/></a>
+                    </div>
+
+
+                    <div class="middle-bottom2-right1 mbr1">
+                        <a href="#"><img src="images/gpic_1.png" alt=""/></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--张平忠中下结束-->
+        <!--中下结束-->
+        <!--中下第二部分开始-->
+        <!--赵静负责的部分-->
+        <div class="bottom-top fr">
+            <div class="bottom-top-top">
+                <a href="http://bns.qq.com/act/a20140618sns/index.shtml"><i></i>灵芝圈社区
+                    <span>COMMUNITY</span></a>
+            </div>
+            <div>
+                <div class="bottom-top-bottom1">
+                    <a href="#" class="fl"><img src="images/bottom-top-1.jpg" alt=""/></a>
+                    <a href="#" class="fr"><img src="images/bottom-top-2.jpg" alt=""/></a>
+                    <a href="#" class="fr bottom-top-bottom1-l">
+                        <img src="images/bottom-top-3.jpg" alt=""/></a>
+                </div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="images/bottom-top-4.jpg" alt=""/>
+                            <div>
+                                <span>剑灵人气NPC外传</span>
+                                <p>剑灵漫画</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/bottom-top-5.jpg" alt=""/>
+                            <div>
+                                <span>剑灵视觉盛宴</span>
+                                <p>美图欣赏</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/bottom-top-6.jpg" alt=""/>
+                            <div>
+                                <span>精彩视频欣赏</span>
+                                <p>视频中心</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--赵静负责的部分-->
+        <!--中下第二部分结束-->
+        <!--下部分开始-->
+        <div class="box" id="box">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                    <p class="version_name">开放测全新版本</p>
+                    <p class="version_time">2013.11</p>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt=""/>
+                        <span></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--下部分结束-->
+
+
+        <!--结束部分开始-->
+        <div class="zuihou">
+            <div class="zuihou-left">
+                <a href="" class="zuihou-left1"></a>
+                <a href="" class="zuihou-left2"></a>
+            </div>
+            <div class="zuihou-right">
+                <ul>
+                    <li class="zuihou-right-top"><a href="#">腾讯互动娱乐</a><span>|</span></li>
+                    <li class="zuihou-right-top"><a href="#">服务条款</a><span>|</span></li>
+                    <li class="zuihou-right-top"><a href="#">广告服务 </a><span>|</span></li>
+                    <li class="zuihou-right-top"><a href="#">腾讯游戏招聘</a><span>|</span></li>
+                    <li class="zuihou-right-top"><a href="#">腾讯游戏客服</a><span>|</span></li>
+                    <li class="zuihou-right-top"><a href="#">商务合作</a><span>|</span></li>
+                    <li class="zuihou-right-top"><a href="#">腾讯网</a><span>|</span></li>
+                    <li class="zuihou-right-top1"><a href="#">网站导航</a></li>
+                </ul>
+                <span class="zuihou-right-middle">腾讯公司版权所有
+Website copyright © 2011 – 2017 TENCENT INC. ALL RIGHTS RESERVED.</span>
+                <span class="zuihou-right-middle1"> <a href="">腾讯公司版权所有</a></span>
+                <p class="zuihou-right-middle2">© 2012 NCSOFT Corporation. All Rights Reserved. Licensed to Tencent Inc. in China</p>
+                <p  class="zuihou-right-middle3">文网进字[2013]005号 <span>|</span>粤网文[2014]0633-233号 <span>|</span>新出网证（粤）字010号 <span>|</span>ISBN号：978-7-89989-642-6</p>
+            </div>
+        </div>
+        <!--结束部分结束-->
+
+</body>
+</html>
